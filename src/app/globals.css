@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-deep: #0a0a0f;
+  --bg-card: #12121a;
+  --accent: #00d4aa;
+  --accent-dim: #00a884;
+  --text: #e8e8ed;
+  --text-muted: #8888a0;
+  --perspective: 2000px;
+  /* Software engineer theme */
+  --terminal-bg: #0d1117;
+  --terminal-green: #3fb950;
+  --terminal-amber: #d29922;
+  --code-keyword: #ff7b72;
+  --code-string: #a5d6ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--bg-deep);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 3D stage container */
+.slide-stage {
+  perspective: var(--perspective);
+  transform-style: preserve-3d;
+  min-height: 100vh;
+}
+
+.slide-panel {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+/* Smooth focus for accessibility */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Selection */
+::selection {
+  background: var(--accent);
+  color: var(--bg-deep);
+}
+
+/* Hide scrollbar but keep scroll */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
