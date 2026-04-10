@@ -7,7 +7,7 @@ import TerminalBlock from "@/components/ui/TerminalBlock";
 const links = [
   { label: "Email", href: "mailto:maheshkumar.shankar@outlook.com", icon: "→" },
   { label: "GitHub", href: "https://github.com", icon: "→" },
-  { label: "LinkedIn", href: "https://linkedin.com", icon: "→" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/maheshkumar-shankar-768900255/", icon: "→" },
 ];
 
 export default function ContactSlide() {
