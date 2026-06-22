@@ -6,8 +6,9 @@ import FloatingOrbs from "@/components/ui/FloatingOrbs";
 import BinaryGrid from "@/components/ui/BinaryGrid";
 import TerminalBlock from "@/components/ui/TerminalBlock";
 import Pill from "@/components/ui/Pill";
+import StatsCards from "@/components/ui/StatsCards";
 
-const SLIDE_INDEX = { projects: 3, contact: 4 } as const;
+const SLIDE_INDEX = { projects: 4, contact: 5 } as const;
 
 export default function HeroSlide() {
   const { goTo } = useSlide();
@@ -29,14 +30,10 @@ export default function HeroSlide() {
             Hi, I&apos;m{" "}
             <span className="text-[var(--accent)]">Maheshkumar Shankar</span>
           </h1>
-          <motion.p
-            className="text-lg sm:text-xl text-white/70 max-w-xl mx-auto lg:mx-0"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-          >
-            I build scalable systems and APIs with .NET, Python & Fast API.
-          </motion.p>
+          <StatsCards
+            className="justify-center lg:justify-start"
+            delay={0.4}
+          />
           <motion.div
             className="mt-8 sm:mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center lg:justify-start"
             initial={{ opacity: 0, y: 12 }}
@@ -72,7 +69,7 @@ export default function HeroSlide() {
               { text: "$ whoami", type: "command" },
               { text: "software-engineer", type: "success" },
               { text: "$ cat stack.txt", type: "command" },
-              { text: ".NET MVC · .NET Core · Python · Fast API · Postman · Swagger", type: "output" },
+              { text: "C# · .NET Core · Python · FastAPI · Git · MySQL", type: "output" },
             ]}
           />
         </motion.div>

@@ -1,50 +1,70 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import TechCube3D from "@/components/ui/TechCube3D";
 import SectionTitle from "@/components/ui/SectionTitle";
+import { getExperienceDisplay, type ExperienceDisplay } from "@/lib/career";
 
-const stats = [
-  { value: "1+", label: "Years experience" },
-  { value: "3+", label: "Projects" },
-  { value: "4.5/5", label: "Customer rating" },
+const highlights = [
+  "Strong foundation in .NET Core / MVC / Web API development",
+  "Database design and optimization using SQL Server",
+  "CAD Automation — bridging engineering workflows with smart software solutions",
+  "A problem-solver's mindset: I enjoy taking ambiguous problems and engineering clear, scalable solutions",
+  "Fast learner, adaptable to new tech stacks and team environments",
 ];
 
 export default function AboutSlide() {
+  const [experience, setExperience] = useState<ExperienceDisplay>(() =>
+    getExperienceDisplay()
+  );
+
+  useEffect(() => {
+    setExperience(getExperienceDisplay());
+  }, []);
+
   return (
-    <div className="w-full h-full overflow-auto flex flex-col md:flex-row items-center justify-center gap-8 sm:gap-10 md:gap-16 px-4 sm:px-6 md:px-8 py-10 sm:py-16 bg-[var(--bg-card)]">
+    <div className="w-full h-full min-h-0 overflow-y-auto overscroll-y-contain scrollbar-hide bg-[var(--bg-card)]">
+      <div className="flex flex-col md:flex-row items-start justify-center gap-8 sm:gap-10 md:gap-16 px-4 sm:px-6 md:px-8 py-10 sm:py-16 min-h-min">
       <motion.div
-        className="flex-1 max-w-lg w-full"
+        className="flex-1 max-w-xl w-full"
         initial={{ opacity: 0, x: -24 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.5 }}
       >
         <SectionTitle title="About me" accentPart="me" className="mb-4 sm:mb-6" />
         <p className="text-white/80 leading-relaxed mb-4">
-          I&apos;m a <strong className="text-white">Software Engineer</strong> focused on
-          full-stack development, system design, and shipping quality code. I care about
-          performance, maintainability, and great DX.
+          I&apos;m a <strong className="text-white">Software Engineer</strong> with{" "}
+          {experience.experienceClause} building robust, scalable applications using .NET Core, ASP.NET MVC, and
+          Web API. I specialize in designing efficient backend systems, writing clean RESTful
+          APIs, and managing data with SQL Server (SSMS) — turning complex business requirements
+          into reliable, production-ready solutions.
         </p>
-        <p className="text-white/70 leading-relaxed mb-8">
-          From APIs and databases to 3D and motion on the web—I like building tools and
-          experiences that are both robust and delightful.
+        <p className="text-white/70 leading-relaxed mb-6">
+          Alongside backend development, I bring hands-on experience in{" "}
+          <strong className="text-white/90">CAD Automation</strong>, where I&apos;ve built tools
+          and scripts that streamline design workflows and reduce manual engineering effort — a
+          unique blend of software engineering and domain-specific automation that few developers
+          offer.
         </p>
-        <div className="flex flex-wrap gap-4 sm:gap-6">
-          {stats.map((s, i) => (
-            <motion.div
-              key={s.label}
-              className="px-4 py-2 rounded-lg bg-white/5 border border-white/10"
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 + i * 0.1 }}
+
+        <h3 className="font-mono text-sm text-[var(--accent)] mb-3 border-b border-white/10 pb-2">
+          What I bring to the table
+        </h3>
+        <ul className="space-y-2">
+          {highlights.map((item, i) => (
+            <motion.li
+              key={item}
+              className="text-white/75 text-sm leading-relaxed flex items-start gap-2"
+              initial={{ opacity: 0, x: -8 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.15 + i * 0.05 }}
             >
-              <span className="block font-mono text-2xl font-bold text-[var(--accent)]">
-                {s.value}
-              </span>
-              <span className="text-xs text-white/60">{s.label}</span>
-            </motion.div>
+              <span className="text-[var(--accent)] mt-0.5 shrink-0">→</span>
+              <span>{item}</span>
+            </motion.li>
           ))}
-        </div>
+        </ul>
       </motion.div>
 
       <motion.div
@@ -60,6 +80,7 @@ export default function AboutSlide() {
           <TechCube3D />
         </div>
       </motion.div>
+      </div>
     </div>
   );
 }

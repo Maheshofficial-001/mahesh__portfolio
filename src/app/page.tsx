@@ -5,10 +5,11 @@ import SlideDeck from "@/components/SlideDeck";
 import HeroSlide from "@/components/slides/HeroSlide";
 import AboutSlide from "@/components/slides/AboutSlide";
 import SkillsSlide from "@/components/slides/SkillsSlide";
+import ExperienceSlide from "@/components/slides/ExperienceSlide";
 import ProjectsSlide from "@/components/slides/ProjectsSlide";
 import ContactSlide from "@/components/slides/ContactSlide";
 
-const TOTAL_SLIDES = 5;
+const TOTAL_SLIDES = 6;
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
           <HeroSlide />
           <AboutSlide />
           <SkillsSlide />
+          <ExperienceSlide />
           <ProjectsSlide />
           <ContactSlide />
         </SlideDeck>

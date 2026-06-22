@@ -6,20 +6,52 @@ import SlideCard from "@/components/ui/SlideCard";
 
 const skillGroups = [
   {
-    title: "Backend & API",
-    items: [".NET MVC", ".NET Core", "WinForms", "Entity Framework", "Python", "Fast API"],
+    title: "Languages",
+    items: ["C#", "JavaScript", "jQuery", "Python"],
   },
   {
-    title: "Tools",
-    items: ["Postman", "Swagger"],
+    title: "Backend & Frameworks",
+    items: [
+      ".NET Core",
+      "ASP.NET MVC",
+      "ASP.NET",
+      "Web API",
+      "FastAPI",
+      "Entity Framework",
+      "Django",
+    ],
   },
   {
-    title: "SVG creation",
-    items: ["LibreCAD", "Inkscape"],
+    title: "Database",
+    items: [
+      "SQL Server (SSMS)",
+      "MySQL",
+      "Database Design & Optimization (DBMS)",
+    ],
   },
   {
     title: "CAD Automation",
-    items: ["SolidEdge", "PowerShape"],
+    items: [
+      "Solid Edge API Automation",
+      "Workflow Scripting",
+      "Design Process Automation",
+    ],
+  },
+  {
+    title: "SVG & Design Tools",
+    items: ["LibreCAD", "Inkscape", "SVG Creation & Manipulation"],
+  },
+  {
+    title: "Tools & Platforms",
+    items: [
+      "Git",
+      "Linux",
+      "VPS Administration",
+      "WinForms",
+      "IIS Deployment",
+      "Windows Task Scheduler",
+      "Full-Stack Development",
+    ],
   },
 ];
 

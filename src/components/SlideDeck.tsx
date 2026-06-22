@@ -62,7 +62,7 @@ export default function SlideDeck({
           return (
             <motion.div
               key={index}
-              className="absolute inset-0 w-full h-full flex items-center justify-center"
+              className="absolute inset-0 w-full h-full flex items-stretch"
               style={{
                 transformStyle: "preserve-3d",
                 perspective: `${perspective}px`,
@@ -86,7 +86,7 @@ export default function SlideDeck({
               }}
             >
               <div
-                className="w-full h-full rounded-xl sm:rounded-2xl overflow-hidden border border-white/5 bg-[var(--bg-card)] shadow-2xl"
+                className="w-full h-full min-h-0 overflow-hidden rounded-xl sm:rounded-2xl border border-white/5 bg-[var(--bg-card)] shadow-2xl"
                 style={{
                   transform: "translateZ(0px)",
                   backfaceVisibility: "hidden",

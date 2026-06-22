@@ -12,7 +12,7 @@ type SlideContextType = {
 
 const SlideContext = createContext<SlideContextType | null>(null);
 
-const SLIDE_LABELS = ["Home", "About", "Skills", "Projects", "Contact"];
+const SLIDE_LABELS = ["Home", "About", "Skills", "Experience", "Projects", "Contact"];
 
 export function SlideProvider({
   total,
